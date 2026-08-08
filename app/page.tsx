@@ -12,7 +12,7 @@ export default function Home() {
   const [actionInput, setActionInput] = useState('');
 
   const allGeneratedItems = useMemo(() => {
-    const list = [];
+    const list: any[] = [];
     const companies = ['Fahad Afzal Store', 'ArtisanPK', 'Northwind Labs', 'UrbanWear PK', 'Lahore Threads', 'Kashmir Crafts', 'TechNova', 'PixelCraft', 'AlphaWears', 'Zenith Hub'];
     const locations = ['Islamabad, Pakistan', 'Lahore, Pakistan', 'Karachi, Pakistan', 'Remote — Global', 'Faisalabad, Pakistan', 'Peshawar, Pakistan'];
 
@@ -45,8 +45,8 @@ export default function Home() {
         { title: 'Full-Stack Node.js & Express Engineer', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80', colors: ['Node.js', 'MongoDB', 'PostgreSQL'], desc: 'Develop secure RESTful and GraphQL backend microservices connected with databases.', priceBase: 3200 }
       ],
       'AI & Data': [
-        { title: 'AI Integration & LangChain Engineer', image: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80', colors: ['OpenAI', 'Python', 'VectorDB'], desc: 'Implement custom AI chatbots, LLM pipelines, and automated data processing scripts[cite: 1].', priceBase: 3400 },
-        { title: 'Data Science & Python Automation Expert', image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80', colors: ['Pandas', 'Python', 'ML'], desc: 'Model training, dataset preparation, and Python automation workflows[cite: 1].', priceBase: 2900 }
+        { title: 'AI Integration & LangChain Engineer', image: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80', colors: ['OpenAI', 'Python', 'VectorDB'], desc: 'Implement custom AI chatbots, LLM pipelines, and automated data processing scripts.', priceBase: 3400 },
+        { title: 'Data Science & Python Automation Expert', image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80', colors: ['Pandas', 'Python', 'ML'], desc: 'Model training, dataset preparation, and Python automation workflows.', priceBase: 2900 }
       ],
       'Fixed price': [
         { title: 'E-Commerce Full Website Setup', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80', colors: ['Fixed Milestone', 'Full Stack'], desc: 'Complete marketplace setup with payment gateway and user dashboards.', priceBase: 1500 }
@@ -67,16 +67,16 @@ export default function Home() {
         { title: 'Portfolio & Agency Landing Template', image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80', colors: ['HTML5', 'Next.js'], desc: 'Clean, responsive multi-page template optimized for high conversion rates.', priceBase: 19 }
       ],
       'UI/UX Design': [
-        { title: 'High-Fidelity UI/UX Prototyping Service', image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80', colors: ['Figma', 'User Research'], desc: 'Professional UI prototyping with custom user journey mapping and wireframing[cite: 1].', priceBase: 300 }
+        { title: 'High-Fidelity UI/UX Prototyping Service', image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80', colors: ['Figma', 'User Research'], desc: 'Professional UI prototyping with custom user journey mapping and wireframing.', priceBase: 300 }
       ],
       'Marketing & SEO': [
-        { title: 'Growth Hacking & SEO Optimization', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80', colors: ['Analytics', 'Ahrefs'], desc: 'Boost organic search traffic with data-driven SEO strategies and content planning[cite: 1].', priceBase: 500 }
+        { title: 'Growth Hacking & SEO Optimization', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80', colors: ['Analytics', 'Ahrefs'], desc: 'Boost organic search traffic with data-driven SEO strategies and content planning.', priceBase: 500 }
       ],
       'Copywriting': [
-        { title: 'Professional Technical Copywriting', image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80', colors: ['Blogs', 'Docs'], desc: 'High-converting technical writing, blog post creation, and brand messaging[cite: 1].', priceBase: 150 }
+        { title: 'Professional Technical Copywriting', image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80', colors: ['Blogs', 'Docs'], desc: 'High-converting technical writing, blog post creation, and brand messaging.', priceBase: 150 }
       ],
       'DevOps & Cloud': [
-        { title: 'AWS / GCP Cloud Infrastructure Setup', image: 'https://images.unsplash.com/photo-1667372335497-681e19441113?auto=format&fit=crop&w=600&q=80', colors: ['AWS', 'Docker', 'CI/CD'], desc: 'Secure cloud server deployment, containerization, and automated CI/CD pipelines[cite: 1].', priceBase: 800 }
+        { title: 'AWS / GCP Cloud Infrastructure Setup', image: 'https://images.unsplash.com/photo-1667372335497-681e19441113?auto=format&fit=crop&w=600&q=80', colors: ['AWS', 'Docker', 'CI/CD'], desc: 'Secure cloud server deployment, containerization, and automated CI/CD pipelines.', priceBase: 800 }
       ],
       'Handmade': [
         { title: 'Handcrafted Genuine Leather Journal', image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80', colors: ['Vintage Brown', 'Antique Tan'], desc: 'Hand-stitched vintage leather journal with handmade recycled cotton pages.', priceBase: 45 }
@@ -150,7 +150,7 @@ export default function Home() {
     },
     'Digital Services': {
       title: 'Professional Freelance Services',
-      subtitle: 'Hire verified experts for UI/UX prototyping, digital marketing, copywriting, and AWS cloud deployments[cite: 1].',
+      subtitle: 'Hire verified experts for UI/UX prototyping, digital marketing, copywriting, and AWS cloud deployments.',
       bannerImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
       filters: ['All', 'UI/UX Design', 'Marketing & SEO', 'Copywriting', 'DevOps & Cloud']
     }
@@ -169,7 +169,6 @@ export default function Home() {
     return items;
   }, [allGeneratedItems, activeTab, filterType]);
 
-  // Gorgeous, highly polished role dashboards with badge tags and smooth card aesthetics
   const roleDashboards: Record<string, any> = {
     Buyer: {
       tagColor: 'bg-sky-100 text-sky-800 border-sky-200',
@@ -317,7 +316,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Stunning Redesigned Role Dashboards */}
       {activeRoleView && roleDashboards[activeRoleView] ? (
         <div className="px-6 lg:px-12 py-10 max-w-7xl mx-auto space-y-8 animate-fadeIn">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 sm:p-10 rounded-3xl border border-gray-200 shadow-sm gap-4">
@@ -492,103 +490,20 @@ export default function Home() {
 
             <div className="h-64 w-full relative">
               <img src={selectedItem.image} alt={selectedItem.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                <div className="text-white">
-                  <span className="bg-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-wider">
-                    {selectedItem.type}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-black mt-1">{selectedItem.title}</h3>
-                </div>
-              </div>
             </div>
-
-            <div className="p-6 sm:p-8 space-y-4">
-              <div className="flex justify-between items-center">
-                <span className="text-emerald-700 font-black text-2xl">{selectedItem.price}</span>
-                <span className="text-xs font-bold bg-gray-100 text-gray-800 px-3 py-1.5 rounded-xl border border-gray-200">
-                  Variant / Spec: <strong className="text-emerald-700">{selectedItem.colorEffect}</strong>
-                </span>
-              </div>
-
-              <div className="space-y-2 bg-gray-50 p-4 rounded-2xl border border-gray-200 text-xs">
-                <p className="flex justify-between text-gray-600">
-                  <span>Provider / Brand:</span> <strong className="text-gray-900">{selectedItem.company}</strong>
-                </p>
-                <p className="flex justify-between text-gray-600">
-                  <span>Location:</span> <strong className="text-gray-900">{selectedItem.location}</strong>
-                </p>
-              </div>
-
-              <p className="text-xs text-gray-600 leading-relaxed">
-                <strong className="text-gray-900">Description:</strong> {selectedItem.desc}
-              </p>
-
-              <div className="flex space-x-3 pt-3">
-                <button
+            
+            <div className="p-6 space-y-4">
+              <h3 className="text-xl font-black text-gray-900">{selectedItem.title}</h3>
+              <p className="text-xs text-gray-600">{selectedItem.desc}</p>
+              <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+                <span className="text-lg font-black text-emerald-700">{selectedItem.price}</span>
+                <button 
                   onClick={() => setSelectedItem(null)}
-                  className="w-1/2 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition cursor-pointer"
+                  className="px-5 py-2.5 bg-emerald-600 text-white text-xs font-bold rounded-xl hover:bg-emerald-700 transition"
                 >
                   Close
                 </button>
-                <Link
-                  href="/login"
-                  className="w-1/2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition text-center shadow-lg block"
-                >
-                  Proceed
-                </Link>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {managingAction && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fadeIn">
-          <div className="bg-white border border-gray-200 rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-5 relative shadow-2xl">
-            <button
-              onClick={() => setManagingAction(null)}
-              className="absolute top-5 right-5 text-gray-400 hover:text-gray-900 text-base font-black bg-gray-100 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition"
-            >
-              ✕
-            </button>
-
-            <div>
-              <span className="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-lg uppercase tracking-wider">
-                Action Center: {managingAction.name}
-              </span>
-              <h3 className="text-xl font-black text-gray-900 mt-2">Manage & Update</h3>
-              <p className="text-xs text-gray-600 mt-1">{managingAction.desc}</p>
-            </div>
-
-            <div className="space-y-3">
-              <div className="p-4 bg-gray-50 border border-gray-200 rounded-2xl text-xs text-gray-700 space-y-2">
-                <p>Provide updated instructions or reference code for <strong className="text-gray-900">{managingAction.name}</strong>:</p>
-                <input 
-                  type="text" 
-                  placeholder="Type details here..." 
-                  value={actionInput}
-                  onChange={(e) => setActionInput(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                />
-              </div>
-            </div>
-
-            <div className="flex space-x-3 pt-2">
-              <button
-                onClick={() => setManagingAction(null)}
-                className="w-1/2 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition cursor-pointer"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={() => {
-                  alert(`Successfully updated: ${managingAction.name}!`);
-                  setManagingAction(null);
-                }}
-                className="w-1/2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition shadow-lg cursor-pointer"
-              >
-                Save Changes
-              </button>
             </div>
           </div>
         </div>
