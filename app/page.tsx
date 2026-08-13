@@ -493,17 +493,79 @@ export default function Home() {
             </div>
             
             <div className="p-6 space-y-4">
-              <h3 className="text-xl font-black text-gray-900">{selectedItem.title}</h3>
-              <p className="text-xs text-gray-600">{selectedItem.desc}</p>
-              <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                <span className="text-lg font-black text-emerald-700">{selectedItem.price}</span>
-                <button 
+              <div className="flex justify-between items-start">
+                <div>
+                  <span className="text-[10px] font-black px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-lg uppercase tracking-wider">{selectedItem.type}</span>
+                  <h3 className="text-xl font-black text-gray-900 mt-1">{selectedItem.title}</h3>
+                  <p className="text-xs font-semibold text-gray-500">{selectedItem.company}</p>
+                </div>
+                <span className="text-emerald-700 font-black text-lg">{selectedItem.price}</span>
+              </div>
+              <p className="text-xs text-gray-600 leading-relaxed">{selectedItem.desc}</p>
+              <div className="pt-4 border-t border-gray-100 flex justify-end space-x-3">
+                <button
                   onClick={() => setSelectedItem(null)}
-                  className="px-5 py-2.5 bg-emerald-600 text-white text-xs font-bold rounded-xl hover:bg-emerald-700 transition"
+                  className="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition cursor-pointer"
                 >
                   Close
                 </button>
+                <button
+                  onClick={() => {
+                    alert(`Successfully processed secure action for: ${selectedItem.title}`);
+                    setSelectedItem(null);
+                  }}
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-sm"
+                >
+                  Proceed Securely →
+                </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {managingAction && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fadeIn">
+          <div className="bg-white border border-gray-200 rounded-3xl max-w-md w-full p-6 space-y-5 shadow-2xl relative">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-black px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-lg uppercase tracking-wider">Module Control</span>
+              <button 
+                onClick={() => setManagingAction(null)}
+                className="text-gray-400 hover:text-gray-900 font-bold text-sm"
+              >
+                ✕
+              </button>
+            </div>
+            <div>
+              <h3 className="text-lg font-black text-gray-900">{managingAction.name}</h3>
+              <p className="text-xs text-gray-600 mt-1 leading-relaxed">{managingAction.desc}</p>
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Update Parameter / Input:</label>
+              <input 
+                type="text" 
+                value={actionInput}
+                onChange={(e) => setActionInput(e.target.value)}
+                placeholder="Enter modification notes or status..."
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition"
+              />
+            </div>
+            <div className="flex justify-end space-x-3 pt-2">
+              <button
+                onClick={() => setManagingAction(null)}
+                className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-xl transition cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  alert(`Successfully updated module: ${managingAction.name}`);
+                  setManagingAction(null);
+                }}
+                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-sm"
+              >
+                Save Changes
+              </button>
             </div>
           </div>
         </div>
